@@ -1,0 +1,31 @@
+---
+title: "RProgramming Week 2 Notes"
+author: "Mihai"
+date: "28/6/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+##Control Structures
+
+Control Structures in R allow you to control the flow 
+
+#if
+
+
+```{r}
+x<-3.14
+if (x>3){
+      y<-10
+}else{
+      y<-0
+}
+#print y
+y
+```
+
+
