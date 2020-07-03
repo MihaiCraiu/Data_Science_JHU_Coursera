@@ -407,5 +407,87 @@ as.character(subset(r, state == "HI")$hospital)
 ```
 
 
+# Programming Assigment 3: Quiz
+
+## Questions
+
+### Q1. What resilt is returned by the following code?
+>best("SC", "heart attack")
+
+```{R}
+best("SC", "heart attack")
+```
+
+### Q2. What result is returned by de following code?
+>best("NY", "pneumonia")
+
+```{R}
+best("NY", "pneumonia")
+```
+
+### Q3. What result is returned by de following code?
+>best("AK", "pneumonia")
+
+```{R}
+best("AK", "pneumonia")
+```
+
+### Q4. What result is returned by de following code?
+>rankhospital("NC", "heart attack", "worst")
+
+```{R}
+rankhospital("NC", "heart attack", "worst")
+```
+
+### Q5. What result is returned by de following code?
+>rankhospital("WA", "heart attack", 7)
+
+```{R}
+rankhospital("WA", "heart attack", 7)
+```
+
+### 6. What result is returned by de following code?
+>rankhospital("TX", "pneumonia", 10)
+
+```{R}
+rankhospital("TX", "pneumonia", 10)
+```
+
+### Q7. What result is returned by de following code?
+>rankhospital("NY", "heart attack", 7)
+
+```{R}
+rankhospital("NY", "heart attack", 7)
+```
+
+### Q8. What result is returned by de following code?
+>r <- rankall("heart attack",4)
+>as.character(subset(r,state == "HI")$hospital)
+
+```{R}
+r <- rankall("heart attack",4)
+as.character(subset(r,state == "HI")$hospital)
+```
+
+### Q9. What result is returned by de following code?
+>r <- rankall("pneumonia","worst")
+>as.character(subset(r,state == "NJ")$hospital)
+
+```{R}
+r <- rankall("pneumonia","worst")
+as.character(subset(r,state == "NJ")$hospital)
+```
+### Q10. What result is returned by de following code?
+>r <- rankall("heart failure",10)
+>as.character(subset(r,state == "NV")$hospital)
+
+```{R}
+r <- rankall("heart failure",10)
+as.character(subset(r,state == "NV")$hospital)
+```
+
+
+
+
 
 
