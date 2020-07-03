@@ -1,0 +1,25 @@
+---
+title: 'Programming Assignment 3 INSTRUCTIONS: Hospital Quality'
+author: "Mihai M. Craiu"
+date: "3/7/2020"
+output: pdf_document
+---
+
+# Detailed Instructions
+
+Please download this document for detailed instructions about the assignment
+
+
+
+[ProgAssigment3.PDF](https://d3c33hcgiwev3.cloudfront.net/_2a0d228f9a48b3de85eedf022225fac9_ProgAssignment3.pdf?Expires=1593907200&Signature=U4h~tWmZBbwCG~uvNQaLD5HZ27GCYX6PEXxDobGh9QcMSmAmJv3uMhFoijcorzjeCrrRm7-DbYALQ0FjqZ1t4A1I~o40wflQMkifZmN-rVAbxe0R48xnpQ1EopFK6~qpsqp3TEbshI7i5LkixNiVKqfAJfHiLmIBgnPkHn4JyhQ_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A)
+
+# Data
+
+The zip file containing the data for this assignment can be downloaded here
+
+
+
+[Programming Assingment 3 data](https://d396qusza40orc.cloudfront.net/rprog%2Fdata%2FProgAssignment3-data.zip)
+
+# My solution
+
