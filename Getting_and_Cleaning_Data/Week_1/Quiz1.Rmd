@@ -80,19 +80,33 @@ dateDownloaded_q3 <- date()
 dateDownloaded_q3
 
 #Read rows 18-23 and columns 7-15 into R and assign the result to a variable called: dat
-
 library(xlsx)
 
 col <- 7:15
 row <- 18:23
 dat <- read.xlsx("NaturalGas.xlsx", sheetIndex=1, colIndex = col, rowIndex = row)
 dat
+
+# Answer
+
+sum(dat$Zip*dat$Ext, na.rm = T)
 ```
 
+# Q4.
+
+Read the XML data on Baltimore restaurants from here:
+
+[https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml](https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml)
+
+How many restaurants have zipcode 21231?
+
+
+```{R}
+library(XML)
 
 
 
-
+```
 
 
 
