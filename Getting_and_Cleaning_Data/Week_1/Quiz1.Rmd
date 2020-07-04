@@ -21,14 +21,21 @@ and load the data into R. The code book, describing the variable names is here:
 How many properties are worth $1,000,000 or more?
 
 ```{R}
+# URL for the data and de pdf code book
 file_housing_Url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv"
+code_book_pdf_Url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FPUMSDataDict06.pdf"
 
+#downloading the code book
+download.file(code_book_pdf_Url, destfile = "./codebook.pdf", method = "curl")
+#downloading the data
 download.file(file_housing_Url, destfile = "./microdata_survey_housing.csv")
-
+#reading the data
 housingdata <- read.csv("microdata_survey_housing.csv")
 
-head(housingdata)
+#head(housingdata)
 
+# Answer for the question
+# VAL attribute says how much property is worth, code book
 sum(housingdata$VAL == 24, na.rm = TRUE)
 
 ```
