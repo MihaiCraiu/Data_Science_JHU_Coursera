@@ -5,7 +5,8 @@ date: "14/7/2020"
 output: pdf_document
 ---
 
-Question 1
+# Question 1
+
 The American Community Survey distributes downloadable data about United States communities. Download the 2006 microdata survey about housing for the state of Idaho using download.file() from here:
 
 [data.csv](https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv)
@@ -31,3 +32,61 @@ head(Q1)
 agricultureLogical <- Q1$ACR == 3 & Q1$AGS == 6
 which(agricultureLogical)
 ```
+Options:
+
+*a. 125, 238,262*
+
+b. 403, 756, 798
+
+c. 236, 238, 262
+
+d. 59, 460, 474
+
+
+# Question 2
+
+Using the jpeg package read in the following picture of your instructor into R
+
+[picture.jpg](https://d396qusza40orc.cloudfront.net/getdata%2Fjeff.jpg)
+
+Use the parameter native=TRUE. What are the 30th and 80th quantiles of the resulting data? (some Linux systems may produce an answer 638 different for the 30th quantile)
+
+```{R}
+
+# Loading package…
+
+library(jpeg)
+
+# Downloading file…
+
+Q2Url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fjeff.jpg"
+Q2Path = 'C:/Users/Mihai/Desktop/Data_Science_JHU_Coursera/Getting_and_Cleaning_Data/Week_3/Q2.jpg'
+download.file(Q2Url, Q2Path, mode = 'wb')
+Q2 <- readJPEG(Q2Path, native = TRUE)
+
+# Computing solution…
+
+quantile(Q2, probs = c(0.3, 0.8))
+
+```
+
+‘some Linux systems may produce an answer 638 different for the 30th quantile.’
+
+Mine is Linux, so…
+
+```{R}
+
+paste(quantile(Q2, probs = 0.3) - 638, quantile(Q2, probs = 0.8))
+
+```
+Options:
+
+*a. -15259150 -10575416*
+
+b. -10904118 -10575416
+
+c. 10904118 -594524
+
+d. -16776430 -15390165
+
+
