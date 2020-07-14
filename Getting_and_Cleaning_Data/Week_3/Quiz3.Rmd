@@ -1,0 +1,7 @@
+---
+title: "Quiz3"
+author: "Mihai M. Craiu"
+date: "14/7/2020"
+output: pdf_document
+---
+
