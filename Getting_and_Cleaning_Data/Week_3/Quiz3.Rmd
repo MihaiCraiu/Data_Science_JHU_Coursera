@@ -90,3 +90,112 @@ c. 10904118 -594524
 d. -16776430 -15390165
 
 
+
+# Question 3
+
+Load the Gross Domestic Product data for the 190 ranked countries in this data set:
+
+[https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv](https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv)
+
+Load the educational data from this data set:
+
+[https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv](https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv)
+
+Match the data based on the country shortcode. How many of the IDs match?
+
+Sort the data frame in descending order by GDP rank (so United States is last). What is the 13th country in the resulting data frame?
+
+Original data sources:
+
+http://data.worldbank.org/data-catalog/GDP-ranking-table
+
+http://data.worldbank.org/data-catalog/ed-stats
+
+
+```{R}
+
+# Loading packages…
+
+library(dplyr)
+library(data.table)
+
+# Download file…
+
+Q3GDP_Url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv"
+Q3GDP_Path <- "C:/Users/Mihai/Desktop/Data_Science_JHU_Coursera/Getting_and_Cleaning_Data/Week_3/Q3GDP.csv"
+Q3Edu_Url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv"
+Q3Edu_Path <- "C:/Users/Mihai/Desktop/Data_Science_JHU_Coursera/Getting_and_Cleaning_Data/Week_3/Q3Edu.csv"
+
+download.file(Q3GDP_Url, Q3GDP_Path, method = "curl")
+download.file(Q3Edu_Url, Q3Edu_Path, method = "curl")
+
+# OR
+
+#download.file(Q3GDP_Url, destfile = "./Gross_Domestic_Product.csv", method = "curl")
+#download.file(Q3Edu_Url, destfile = "./Educational_data.csv.csv", method = "curl")
+
+
+# Analyze the data…
+
+Q3GDP <- fread(Q3GDP_Path, skip = 5, nrows = 190, select = c(1, 2, 4, 5), col.names = c("CountryCode", "Rank", "Economy", "Total"))
+Q3Edu <- fread(Q3Edu_Path)
+
+head(Q3GDP)
+
+
+head(Q3Edu)
+
+
+# Merging and sorting data…
+
+Q3_Merge <- merge(Q3GDP, Q3Edu, by = 'CountryCode')
+Q3_Merge <- Q3_Merge %>% arrange(desc(Rank))
+
+head(Q3_Merge)
+
+
+# Generating solution…
+
+
+paste(nrow(Q3_Merge), " matches, 13th country is ", Q3_Merge$Economy[13])
+
+
+```
+
+
+Options:
+
+a. 189 matches, 13th country is Spain
+
+b. 234 matches, 13th country is St. Kitts and Nevis
+
+c. 190 matches, 13th country is St. Kitts and Nevis
+
+d. 190 matches, 13th country is Spain
+
+*e. 189 matches, 13th country is St. Kitts and Nevis*
+
+f. 234 matches, 13th country is Spain
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
