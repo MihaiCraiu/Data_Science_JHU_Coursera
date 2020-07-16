@@ -169,6 +169,57 @@ c. 16
 d. 8
 
 
+# Question 5
+
+You can use the quantmod ([http://www.quantmod.com/](http://www.quantmod.com/)) package to get historical stock prices for publicly traded companies on the NASDAQ and NYSE. Use the following code to download data on Amazon’s stock price and get the times the data was sampled.
+
+```{R}
+
+# # Loading package…
+
+library(quantmod)
+amzn = getSymbols("AMZN", auto.assign=FALSE)
+sampleTimes = index(amzn)
+
+```
+
+
+How many values were collected in 2012? How many values were collected on Mondays in 2012?
+
+
+```{R}
+
+# Loading package…
+
+library(quantmod)
+library(lubridate)
+amzn = getSymbols("AMZN", auto.assign=FALSE)
+sampleTimes = index(amzn)
+
+# How many values were collected in 2012?
+
+amzn2012 <- sampleTimes[grep("^2012", sampleTimes)]
+NROW(amzn2012)
+
+# How many values were collected on Mondays in 2012?
+
+NROW(amzn2012[weekdays(amzn2012) == "Monday"])
+
+```
+Options:
+
+a. 252, 50
+
+b. 250, 51
+
+c. 251, 47
+
+*d. 250, 47*
+
+
+
+
+
 
 
 
